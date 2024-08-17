@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <Button>hello</Button>
+    <p>only registered user can see it</p>
   );
 }
