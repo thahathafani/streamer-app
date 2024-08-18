@@ -1,4 +1,4 @@
-import Image from "next/image";
+ import Image from "next/image";
 import { Poppins } from "next/font/google";
 
 import { cn } from "@/lib/utils";
@@ -19,10 +19,10 @@ export const Logo = () => {
                 />
             </div>
             <div className="flex flex-col items-center">
-                <p className="text-xl font-semibold">
-                    streamer-hub
+                <p className="text-2xl font-semibold">
+                    Streamer
                 </p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                     let's Stream Now
                 </p>
             </div>
