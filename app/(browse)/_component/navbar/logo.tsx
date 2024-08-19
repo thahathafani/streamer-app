@@ -23,9 +23,6 @@ export const Logo = () => {
                 <p className="text-2xl font-semibold">
                     Streamer
                 </p>
-                <p className="text-lg text-muted-foreground">
-                    let's Stream Now
-                </p>
             </div>
         </div>
     );
