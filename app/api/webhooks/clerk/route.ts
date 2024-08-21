@@ -49,54 +49,26 @@ export async function POST(req: Request) {
 
   // Do something with the payload
   // For this guide, you simply log the payload to the console
-  //const { id } = evt.data
+   
   const eventType = evt.type
-  //console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
-  //console.log('Webhook body:', body)
+  // console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
+  // //console.log('Webhook body:', body)
 
-  if (eventType === 'user.created') {
-    try {
-      const user = await db.user.create({
+  try {
+    if (eventType === "user.created") {
+      await db.user.create({
         data: {
           externalUserId: payload.data.id,
           username: payload.data.username,
           imageUrl: payload.data.image_url,
-          email: payload.data.email,  // Ensure this is present
+          email: payload.data.email,
         },
       });
-      console.log('User created:', user);
-    } catch (error) {
-      console.error('Error creating user:', error);
     }
-}
+  } catch (error) {
+    console.error("Error saving user to database:", error);
+    return new Response('Database Error', { status: 500 });
+  }
 
-if (eventType === 'user.updated') {
-    const currentUser = await db.user.findUnique({
-    where: {
-    externalUserId: payload.data.id,
-    }
-    });
-    if (!currentUser) {
-    return new Response ("User not found", { status: 404 });
-    }
-    await db.user.update({
-        where: {
-            externalUserId: payload.data.id
-        },
-        data: {
-            username: payload.data.username,
-            imageUrl: payload.data.image_url
-        },
-    });
-}
-
-if(eventType === 'user.deleted'){
-    await db.user.delete({
-        where: {
-            externalUserId: payload.data.id,
-        }
-    })
-}
-
-    return new Response('', { status: 200 })
+  return new Response('', { status: 200 })
 }
