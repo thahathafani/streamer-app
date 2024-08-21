@@ -54,7 +54,7 @@ export async function POST(req: Request) {
   //console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
   //console.log('Webhook body:', body)
 
-  if (eventType === "user.created") {
+  if (eventType === 'user.created') {
     try {
       const user = await db.user.create({
         data: {
@@ -70,7 +70,7 @@ export async function POST(req: Request) {
     }
 }
 
-if (eventType === "user.updated") {
+if (eventType === 'user.updated') {
     const currentUser = await db.user.findUnique({
     where: {
     externalUserId: payload.data.id,
@@ -90,7 +90,7 @@ if (eventType === "user.updated") {
     });
 }
 
-if(eventType === "user.deleted"){
+if(eventType === 'user.deleted'){
     await db.user.delete({
         where: {
             externalUserId: payload.data.id,

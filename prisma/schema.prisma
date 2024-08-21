@@ -14,13 +14,13 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  username  String @unique
-  imageUrl String @db.String
-  email String @unique
-  externalUserId String @unique
-  bio String? @db.String
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  username       String   @unique
+  imageUrl       String   @db.String
+  email          String   @unique
+  externalUserId String   @unique
+  bio            String?  @db.String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
