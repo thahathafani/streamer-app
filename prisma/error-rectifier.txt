@@ -1,0 +1,10 @@
+now facing an error over the email integration with the clerk!
+
+ possible steps:
+
+ 1. updating db
+ 2. using another db 
+ 3. if these not works use mysql or postgress
+ 4. check its works?
+ 5. if not works prisma and clerk end point need to be updated
+ 6. 90% of chance will works well..
