@@ -8,3 +8,12 @@ now facing an error over the email integration with the clerk!
  4. check its works?
  5. if not works prisma and clerk end point need to be updated
  6. 90% of chance will works well..
+
+
+
+ manchesterdays121
+
+ QrJCH9xOg35NxdjT
+
+
+mongodb+srv://manchesterdays121:QrJCH9xOg35NxdjT@streamer-app.fijq4.mongodb.net/?retryWrites=true&w=majority&appName=streamer-app
