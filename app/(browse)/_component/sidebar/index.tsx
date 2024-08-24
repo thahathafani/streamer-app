@@ -8,9 +8,7 @@ export const Sidebar = async () => {
     return(
         <Wrapper>
             <Toggle />
-            <div className="space-y-4 lg:pt-0">
-                <Recommended data={recommended}/>
-            </div>
+            
         </Wrapper>
     );
 };
