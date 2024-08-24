@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/store/use-sidebar";
 import { Skeleton } from "@/components/ui/skeleton";
 import UserAvatar from "@/components/user-avatar";
+import { LiveBadge } from '@/components/live-badge';
 
 interface UserItemProps {
     username: string;
@@ -46,8 +47,19 @@ export const UserItem = ({
                         username={username}
                         isLive={isLive}
                     />
+                    {!collapsed && (
+                        <p className="truncate">
+                            {username}
+                        </p>
+                    )}
+                    {!collapsed && isLive && (
+                        <LiveBadge className="ml-auto"/>
+                    )}
+                    
                 </div>
             </Link>
         </Button>
     );
 };
+
+
