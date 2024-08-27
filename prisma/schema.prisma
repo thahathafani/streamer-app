@@ -13,6 +13,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// User Model
+
 model User {
   id             String   @id @default(auto()) @map("_id") @db.ObjectId
   externalUserId String  @unique
@@ -20,6 +22,32 @@ model User {
   imageUrl       String
   email          String?  // Make it optional
   bio            String?
+
+
+  // Adding relation between user and the follow 
+
+  following Follow[] @relation("Following")
+  followed Follow[] @relation("FollowedBy")
+
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+}
+
+
+// Follow Model
+
+model Follow {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  followerId String @db.ObjectId
+  followingId String @db.ObjectId
+
+  follower User @relation(name: "Following", fields: [followerId], references: [id], onDelete: Cascade)
+  followed User @relation(name: "FollowedBy", fields: [followerId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([followerId, followingId])
+  @@index([followingId])
+  @@index([followerId])
 }
