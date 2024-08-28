@@ -1,4 +1,6 @@
-import { db } from "./db"
+// To get user by username:
+
+import { db } from "@/lib/db"
 
 
 export const getUserByUsername = async (username: string) => {
