@@ -29,7 +29,8 @@ const UserPage = async ({
       <p>username: {user.username}</p>
       <p>user email: {user.email}</p>
       <p>is Following: {`${isFollowing}`}</p>
-      <Actions/>
+      <Actions isFollowing={isFollowing} />
+
     </div>
   )
 }
