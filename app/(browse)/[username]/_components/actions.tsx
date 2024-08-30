@@ -11,7 +11,7 @@ interface ActionsProps{
 
 export const Actions = ({ isFollowing }: ActionsProps) => {
 
-    const [isPending, stratTransition] = useTransition();
+    const [isPending, startTransition] = useTransition();
 
     const onClick = () => ({
         isFollowing,
@@ -21,7 +21,7 @@ export const Actions = ({ isFollowing }: ActionsProps) => {
         })
 }
     return(
-        <Button disabled={isFollowing || isPending} onClick={onClick} className="bg-blue-500 text-white hover:bg-blue-500">
+        <Button disabled={isFollowing || isPending} onClick={onClick} className="bg-blue-500 text-white hover:bg-gray-500">
             Follow
         </Button>
     )
