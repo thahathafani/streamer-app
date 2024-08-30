@@ -4,17 +4,24 @@ import { startTransition, useTransition } from "react";
 import { onFollow } from "@/actions/follow";
 import { Button } from "@/components/ui/button";
 
-export const Actions = () => {
+
+interface ActionsProps{
+    isFollowing: boolean;
+};
+
+export const Actions = ({ isFollowing }: ActionsProps) => {
 
     const [isPending, stratTransition] = useTransition();
 
-    const onClick = () => {
+    const onClick = () => ({
+        isFollowing,
+    }: ActionsProps) => {
         startTransition(() => {
             onFollow("hellooo");
         })
 }
     return(
-        <Button disabled={isPending} onClick={onClick} className="bg-blue-500 text-white hover:bg-blue-500">
+        <Button disabled={isFollowing || isPending} onClick={onClick} className="bg-blue-500 text-white hover:bg-blue-500">
             Follow
         </Button>
     )
