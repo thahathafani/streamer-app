@@ -34,7 +34,7 @@ export default function RootLayout({
         forcedTheme='dark'
         storageKey='stream-app-theme'
         >
-        <Toaster/>
+        <Toaster theme='light' position="bottom-center" />
           {children}
         </ThemeProvider>
       </body>
