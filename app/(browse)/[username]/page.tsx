@@ -10,6 +10,16 @@ interface UserPageProps {
     };
 };
 
+interface FollowedUser {
+  following?: Following;
+}
+
+// Mock implementation for followUser
+export const followUser = async (id: string): Promise<FollowedUser> => {
+  // Replace with actual implementation
+  return { following: { username: "exampleUser" } }; // Example response
+};
+
 const UserPage = async ({
     params
 }: UserPageProps) => {
@@ -29,7 +39,7 @@ const UserPage = async ({
       <p>username: {user.username}</p>
       <p>user email: {user.email}</p>
       <p>is Following: {`${isFollowing}`}</p>
-      <Actions isFollowing={isFollowing} />
+      <Actions userId={user.id} isFollowing={isFollowing} />
 
     </div>
   )
