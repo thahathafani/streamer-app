@@ -9,6 +9,7 @@ import { dark } from '@clerk/themes';
 import { ThemeProvider } from 'next-themes';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,11 +28,13 @@ export default function RootLayout({
     <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
       <body className={inter.className}>
+        
         <ThemeProvider 
         attribute="class"
         forcedTheme='dark'
         storageKey='stream-app-theme'
         >
+        <Toaster/>
           {children}
         </ThemeProvider>
       </body>
