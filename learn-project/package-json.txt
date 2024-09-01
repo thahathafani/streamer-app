@@ -1,0 +1,20 @@
+This file is like the instruction manual for your project. 
+It lists all the tools and libraries the project needs and
+the commands to run it.
+
+"name": "streamer-app" – This is the name of your project.
+"build": "next build" – This command prepares your project for production.
+"start": "next start" – This runs the built project, ideal for production.
+"lint": "next lint" – This checks your code for errors or code style issues.
+
+dependencies: These are the tools the project needs to run:
+
+@clerk/nextjs, @prisma/client, mongodb, mongoose, react, next, etc. 
+– These libraries are required for user authentication, connecting to 
+a MongoDB database, building UI components, and running the Next.js framework.
+
+devDependencies: These are the tools needed during development (not in production):
+
+"eslint" – A tool that checks code for errors.
+"tailwindcss" – A utility-based CSS framework for styling the app.
+"typescript" – A superset of JavaScript that adds types to the code.
