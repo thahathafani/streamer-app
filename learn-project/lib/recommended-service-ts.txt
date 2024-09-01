@@ -1,0 +1,13 @@
+Purpose:
+
+This service provides a list of recommended users, likely for features like suggesting users to follow.
+Key Functions:
+
+getRecommended:
+This function first tries to get the current logged-in user (self).
+If a user is found, it fetches other users from the database, excluding the current user.
+If no user is logged in, it fetches all users.
+The users are sorted by createdAt in descending order, meaning the newest users are listed first.
+Usage:
+
+This could be used on a "Suggested Users" page or a similar feature in your app.
