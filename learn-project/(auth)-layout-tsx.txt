@@ -1,0 +1,15 @@
+(auth)\layout.tsx
+What is it?
+
+This file is like the layout or main floor plan of the entry area in your castle, where everything is neatly organized for people to either sign in or sign up.
+What's happening here?
+
+Logo Component:
+
+The Logo component you created is displayed at the top of the page, welcoming users with your app’s branding.
+Children Prop:
+
+This is a placeholder for the other components, like the SignIn or SignUp forms, to be displayed below the logo.
+Styling:
+
+The layout is centered both horizontally and vertically, making sure everything looks neat and is easy to interact with.
