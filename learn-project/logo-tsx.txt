@@ -1,0 +1,30 @@
+logo.tsx
+
+What is it?
+
+This file is like the banner or flag of your castle. 
+It represents your app's identity and gives it a recognizable face.
+
+
+What's happening here?
+
+Imports:
+
+"Image": Used to display images in Next.js, like adding a picture or logo to your castle.
+"Poppins": A font from Google Fonts that makes your castle's text look neat and stylish.
+"cn": A utility function to combine class names. It's like mixing LEGO pieces of different colors to create a unique look.
+Logo Component:
+
+Font Setup: You’re loading the Poppins font with different weights (like thin and bold pieces of LEGO bricks) to use throughout your app.
+Rendering the Logo:
+
+The Logo component builds the logo display for your app.
+"Image": There’s an empty src for the image, where you can put the URL or path to your logo file. 
+         This image is placed inside a circle with some padding (like framing a picture).
+"Text": Below the image, there’s some text:
+"Streamer": The main title in a big, bold font.
+"let's Stream Now": A subtitle in a smaller, lighter color font, like a catchphrase.
+
+What to do next?
+
+Add your logo's image source (URL or file path) to the src="" attribute to display it in your app.
