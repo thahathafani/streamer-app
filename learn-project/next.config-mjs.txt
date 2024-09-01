@@ -1,0 +1,7 @@
+This file configures how Next.js behaves. 
+In your case, it's mostly empty:
+
+const nextConfig = {};
+export default nextConfig;
+
+This means the project is using the default Next.js settings.
