@@ -1,0 +1,18 @@
+Purpose:
+
+This file defines your database schema, like a blueprint for your database structure.
+Key Models:
+
+User:
+
+Represents a user in your application.
+Fields include id, externalUserId, username, imageUrl, email, bio, and timestamps.
+Relations: Users can follow and be followed by others (through the Follow model).
+Follow:
+
+Represents the follow relationship between users.
+Fields include id, followerId, followingId, and timestamps.
+It includes unique constraints and indexes to efficiently manage these relationships.
+Usage:
+
+These models are used by Prisma to generate the database tables/collections and the corresponding TypeScript types. Your services (auth-service.ts, user-service.ts, recommended-service.ts) interact with these models through the db client.
