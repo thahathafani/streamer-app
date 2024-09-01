@@ -1,0 +1,10 @@
+Purpose:
+
+Utility functions that make your code cleaner and easier to work with. Think of it as a toolbox with commonly used tools.
+Key Functions:
+
+cn:
+A helper function that combines multiple class names into a single string using clsx and merges them with Tailwind CSS classes using twMerge.
+Usage:
+
+This function is used to manage conditional class names and ensure that Tailwind classes are applied correctly.
