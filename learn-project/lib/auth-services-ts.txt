@@ -1,0 +1,28 @@
+Purpose:
+
+*   This file is like the guard at the gate, checking if a 
+    user is authorized to enter certain areas of your app.
+
+
+Key Functions:
+
+"getSelf":
+
+*   This function checks the current logged-in user using Clerk's 
+    "currentUser" function.
+
+*   If the user is not found or doesn't have a username, it 
+    throws an "Unauthorized" error.
+
+*   It then queries your database (db) to find the user's 
+    details using the externalUserId from Clerk.
+
+*   If no user is found in your database, it throws a "Not found" error.
+
+*   If everything checks out, it returns the user's details 
+    from the database.
+
+    Usage:
+
+        This function is essential for ensuring that only authenticated 
+        users can access certain parts of your application.
