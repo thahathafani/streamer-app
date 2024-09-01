@@ -1,0 +1,14 @@
+sign-up\[[...sign-up]]\page.tsx
+
+
+What is it?
+
+This is another gate, but this time it’s for new visitors who want to join your castle for the first time by signing up.
+What's happening here?
+
+Import:
+
+SignUp: Another component from Clerk that handles user registration.
+Page Component:
+
+This renders the SignUp form, allowing new users to create an account.
