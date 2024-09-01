@@ -1,0 +1,11 @@
+Purpose:
+
+Provides a service to interact with user data in the database. This is like a librarian who knows how to find user information.
+Key Functions:
+
+getUserByUsername:
+This function queries the database for a user by their username.
+It returns the user if found, or null if not.
+Usage:
+
+This can be used in parts of your application where you need to look up users by their usernames, such as profile pages.
