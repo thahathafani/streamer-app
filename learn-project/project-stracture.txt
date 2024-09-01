@@ -1,0 +1,73 @@
+
+
+The project stracture until recommended list:
+
+
+Streamer-app/
+├── app/
+│   ├── (auth)/
+│   │   ├── _components/
+│   │   │   └── logo.tsx
+│   │   ├── sign-in/
+│   │   │   └── [[...sign-in]]/
+│   │   │       └── page.tsx
+│   │   ├── sign-up/
+│   │   │   └── [[...sign-up]]/
+│   │   │       └── page.tsx
+│   │   └── layout.tsx
+│   ├── (browse)/
+│   │   ├── (home)/
+│   │   │   └── page.tsx
+│   │   ├── _component/
+│   │   │   ├── navbar/
+│   │   │   │   ├── actions.tsx
+│   │   │   │   ├── index.tsx
+│   │   │   │   ├── logo.tsx
+│   │   │   │   ├── note.txt (duplicate)
+│   │   │   │   └── search.tsx
+│   │   │   ├── sidebar/
+│   │   │   │   ├── index.tsx
+│   │   │   │   ├── recommended.tsx
+│   │   │   │   ├── toggle.tsx (duplicate)
+│   │   │   │   ├── user-item.tsx
+│   │   │   │   └── wrapper.tsx
+│   │   │   └── container.tsx
+│   │   └── layout.tsx
+│   ├── api/
+│   │   └── webhooks/
+│   │       └── clerk/
+│   │           └── route.ts
+│   ├── globals.css
+│   └── layout.tsx
+├── components/
+│   ├── ui/
+│   │   ├── avatar.tsx
+│   │   ├── button.tsx
+│   │   ├── input.tsx
+│   │   ├── skeleton.tsx
+│   │   └── tooltip.tsx
+│   ├── hint.tsx
+│   ├── live-badge.tsx
+│   ├── theme-provider.tsx
+│   └── user-avatar.tsx
+├── lib/
+│   ├── auth-service.ts
+│   ├── db.ts
+│   ├── recommended-service.ts
+│   └── utils.ts
+├── prisma/
+│   └── schema.prisma
+├── store/
+│   └── use-sidebar.ts
+├── .eslintrc.json
+├── .gitignore
+├── .env
+├── components.json
+├── README.md
+├── middleware.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── tsconfig.json
+└── tailwind.config.ts
