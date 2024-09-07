@@ -1,0 +1,61 @@
+import { Button } from '@/components/ui/button';
+import { Clapperboard } from 'lucide-react';
+import { SignInButton, UserButton } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs/server';
+import Link from 'next/link';
+import React from 'react';
+
+const Actions = async() => {
+  const user = await currentUser();
+  return (
+    <div className="flex items-center justify-end gap-x-2 ml-4 lg:ml-0">
+      {!user && (
+        <SignInButton>
+          <Button size="sm" className='text-white bg-blue-600'>
+            SignIn
+          </Button>
+        </SignInButton>
+      )}
+      {!!user && (
+        <div className='flex items-center gap-x-4'>
+          <Button
+            size="sm"
+            variant="ghost"
+            className="text-muted-foreground hover:text-primary"
+            asChild
+          >
+            <Link href={`/u/${user.username}`}>
+              <Clapperboard className="h-5 w-5 lg:mr-2"/>
+              <span className="hidden lg:block">Dashboard</span>
+            </Link>
+          </Button>
+          <UserButton afterSignOutUrl='/' />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Actions;
+
+
+
+>> Explanation:
+
+    Async Function: 
+    
+        Actions is an asynchronous function, meaning it does something that takes time (like fetching data).
+
+            # currentUser(): This is an important part. It checks if the user is currently logged in.
+
+    Conditional Rendering:
+
+            # !user: If there is no user, it shows a "Sign In" button (SignInButton). Inside this button:
+            # Button size="sm" creates a small blue button with the text "Sign In."
+            # !!user: If the user is logged in (!!user), it shows:
+            # A button that links to the user’s dashboard, where they can manage their account. It includes an icon (Clapperboard) and the word "Dashboard."
+            # The UserButton allows users to sign out, and once they do, they are redirected to the homepage (afterSignOutUrl='/').
+
+    Use Case:
+
+            # This component dynamically shows different buttons based on whether the user is logged in or not. It could be used in any website where users can sign in and manage their accounts.
