@@ -1,0 +1,22 @@
+export default function Page() {
+  return (
+    <div className="flex flex-col gap-y-4">
+      <h1>Home</h1>
+    </div>
+  );
+}
+
+
+>> This is for the home page(primary page of a website). This page is not completely build,
+    but its just a sample development now.
+
+        <div> is like a box or container. This container has a few styles applied:
+
+           # flex tells it to be flexible and adjust its size depending on the content.
+           # flex-col means that any items inside the div should be stacked vertically, one on top of another.
+           # gap-y-4 means there is space between these items (4 units of space).
+           # Inside the div, there is an <h1> tag, which is used to show a heading. In this case, it shows the word "Home".
+    
+    Use Case:
+    
+            This component would be used when you want to show a basic home page with a "Home" title.
