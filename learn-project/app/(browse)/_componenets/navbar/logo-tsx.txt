@@ -1,0 +1,34 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Poppins } from "next/font/google";
+
+const font = Poppins({
+    subsets: ["latin"],
+    weight: ["200","300","400", "500", "600", "700", "800"],
+});
+
+export const Logo = () => {
+    return (
+        <div className="flex flex-col items-center gap-y-4">
+            <div className="bg-white rounded-full p-1">
+                <Image src="" alt="streamer-app" height="80" />
+            </div>
+            <div className="flex flex-col items-center">
+                <p className="text-2xl font-semibold">Streamer</p>
+            </div>
+        </div>
+    );
+};
+
+
+Explanation:
+
+    Logo Structure:
+
+        # The Poppins font is imported and applied to text.
+        # Image Tag: This is used to display the logo image, but the source URL is currently empty (src=""), meaning no image will show yet.
+        # Text "Streamer": Below the image, there is a text with the app’s name ("Streamer"), styled to look large and bold.
+
+    Use Case:
+
+        This component would show the app’s logo and name at the top of the website, giving it a recognizable brand identity.
