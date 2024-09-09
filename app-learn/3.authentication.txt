@@ -23,6 +23,18 @@ The Clerk auth is usefull for authentication, which helps to make authentication
                     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=key-here
                     CLERK_SECRET_KEY=key-here
 
+        Now we done everything, but the clerk doesn't have access to the project:
+
+            So moving to the Docs in clerk: Add authentication and user management to your NextJs App with clerk
+            
+
+            So we need to install the Clerk inside the project
+
+                1. "npm i @clerk/nextjs" on terminal
+                2. Now set the env keys: we already did that.
+                3. Now we need to wrap our project with "<clerkprovider></clerkprovider>"
+                4. To wrap the project: as i know that the "layout" is the major point where i need to do the complete project layout things
+
 
 
 
