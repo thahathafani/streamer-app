@@ -80,7 +80,33 @@ The Clerk auth is usefull for authentication, which helps to make authentication
 
         Now the code doesn't work properly:
 
-            
+            Because we need to add the middleware to it:
+
+                    To do that copy the content from the middleware and paste it on the middleware.ts(which created on the root of the project)
+
+                        code:
+
+                            middleware.ts
+
+                                import { clerkMiddleware } from '@clerk/nextjs/server'
+
+                                // Make sure that the `/api/webhooks/(.*)` route is not protected here
+                                export default clerkMiddleware({
+                                publicRoutes: ["/api/webhooks(.*)"]
+                                });
+
+                                export const config = {
+                                matcher: [
+                                    // Skip Next.js internals and all static files, unless found in search params
+                                    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+                                    // Always run for API routes
+                                    '/(api|trpc)(.*)',
+                                ],
+                                }
+
+                    Now we have setup the "Clerk" but we need to add the signin and signup page:
+
+                        51:08
 
 
 
