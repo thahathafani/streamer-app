@@ -1,0 +1,18 @@
+In NextJs the routing is a helps to manage the file stactuter as well as page redidection method without refreshing the complete webpage.
+
+    1. How do we know that the "page.tsx" is the root file to shown on the localhost:3000?
+    2. Why its only choosen the "page.tsx" as the root?
+
+    To answer this we have,
+
+        The "page.tsx" is indide of the "app" folder. The "app" folder is specially reserved folder in the NextJs.
+        The 2nd thing is that this file is named as "page.tsx",the page is a reserved filename in NextJs.
+         It’s tells the router this the file we need to show to the clients.
+
+         -> In a folder "app" there is a page.tsx(extention doesn't matter on file name matters) it will be the "route".
+         -> But if there is another file called foo.tsx inside the "app" this wouldn't be a route.
+
+
+        So how could we work for multiple page?
+
+            
