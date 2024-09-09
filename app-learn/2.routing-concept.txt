@@ -15,4 +15,22 @@ In NextJs the routing is a helps to manage the file stactuter as well as page re
 
         So how could we work for multiple page?
 
-            
+            -> Here we 1st create a another folder inside of the "app" folder.
+
+                Basic file stactuter
+                
+                --app
+                    --folder
+                        ->foo.tsx 
+                 ->page.tsx
+
+                 In here, when we try to move on: localhost:3000/folder, it doesn't print foo.tsx:(404: Page not Found!)
+                  The reason is that its due to the "page" is the reserved file in Nextjs and it will not show any other named file to the client.
+                 So to show the "folder" file to the client we need to rename the "foo.tsx" to "page.tsx".
+
+                    --app
+                        --folder
+                            ->page.tsx 
+                     ->page.tsx
+
+                Now the localhost:3000/folder shows the contents
