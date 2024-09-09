@@ -47,3 +47,23 @@ install node  higher 20 --v
                     5. so we need to add the button components to our page.tsx insifde of the app folder!
                 
                 ------- Components added succussful------
+
+
+                    -------Coding stracture------
+
+                        code: app-> page.tsx:
+
+                            import {Button} from '@/component/ui/button'
+                            
+                            export default function Home() {
+                                return (
+                                    <Button>
+                                        Click me
+                                    </Button> 
+                                    //(Button component we added from the shadcn ui, and we added it into the page.tsx with a simple tag <Button> with a conent of "Click me" )
+                                )
+                            }
+
+                                    output:
+
+                                        "Click me" Button in bg-black
