@@ -14,4 +14,25 @@ install node  higher 20 --v
 
         ---------nextjs succussful---------
 
-            
+            just run the project
+
+                > npm run dev 
+
+            remove basic contents from the next app stracture
+
+                app -> page.tsx -> remove the contents inside the retrun!
+                
+                    add a p tag to check its working: <p>Hello, world</p>
+
+                        output: its now prints: Hello, world
+
+                    check the tailwind works well: <p className:" text-red-500 ">Hello, world</p>
+
+                        output: its turn the p tag contents in red color
+
+            ---------Now we need to add shadcn ui(for adding components)---------
+
+                1. npx  shadcn-ui@latest init
+                2. select style as "default"
+
+                --------- shadcn-ui succussful----------
