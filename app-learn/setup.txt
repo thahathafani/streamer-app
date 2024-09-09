@@ -36,3 +36,14 @@ install node  higher 20 --v
                 2. select style as "default"
 
                 --------- shadcn-ui succussful----------
+
+                Now we need to add a components from the shadcn ui to test 
+
+                    1. choose any component from the shadcn ui
+                    2. Now copy the chi
+                    3. npx shadcn-ui@latest add button
+                    4. Now we get the button components inside the the project,
+                        but we need to use this button components to be used.
+                    5. so we need to add the button components to our page.tsx insifde of the app folder!
+                
+                ------- Components added succussful------
