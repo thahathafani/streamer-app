@@ -85,3 +85,26 @@ In NextJs the routing is a helps to manage the file stactuter as well as page re
 
                     So here we get a proper layout for the both pages: such as login page and register page:
 
+                            But there is another issue over there, the file stracture is always showing on the localhost.
+
+                                localhost:3000/auth/login -> auth folder
+                                localhost:3000/auth/register -> auth folder
+
+                                To remove the auth showing in localhost:
+
+                                    file stracture:
+
+                                            --(auth) -----> we have to put the auth folder inside the "()".
+                                                --login
+                                                    ->page.tsx
+                                                --register
+                                                    ->page.tsx
+                                            ->layout.tsx
+
+                                By using the "()" we are telling the path to not take the auth in url. So this only an organastional folder. 
+
+
+                                    localhost:3000/login -> No auth folder
+                                    localhost:3000/register -> No auth folder
+
+
