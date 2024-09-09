@@ -1,0 +1,28 @@
+Here we are going to create a authentication page for both signin and registration.
+
+For authentication we gone use the Clerk auth.
+The Clerk auth is usefull for authentication, which helps to make authentication in some steps.
+
+    Steps for authentication:
+
+        1. Signin to Clerk
+        2. Click add application
+        3. Name the application and select the auth methods(email,username,phone number) want.
+        4. Click create application
+        5. Copy the environment keys from the api keys and paste it into .env
+        6. before going to paste it on .env (if we not add .env in gitignore: it effects the privacy):
+                1. Go to .gitignore
+                2. Move to "# local env files" in .gitignore
+                3. add ".env" there
+                4. At root of the project create a ".env" file.
+                5. paste the copyied api key from "Clerk".
+
+            code: 
+                .env
+
+                    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=key-here
+                    CLERK_SECRET_KEY=key-here
+
+
+
+
