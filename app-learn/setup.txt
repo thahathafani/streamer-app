@@ -2,4 +2,16 @@
 
 install node  higher 20 --v
 
-    
+    -----NextJs Install-----
+
+        now create a nextjs app `npx create-next-app@latest "project_name"`
+        yes for typescript
+        yes for tailwind
+        yes for eslint
+        no for src/
+        yes for app router
+
+
+        ---------nextjs succussful---------
+
+            
