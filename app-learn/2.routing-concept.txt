@@ -34,3 +34,54 @@ In NextJs the routing is a helps to manage the file stactuter as well as page re
                      ->page.tsx
 
                 Now the localhost:3000/folder shows the contents
+
+
+
+        ----- Now we work for Layout page ---------
+
+            The layout page is a core page of the app folder: the layout page helps to maitain the overall page stracture. The layout page holdes the children
+             of the pages, which is the other pages inside the same folder.
+
+                Let me give you an eg:
+
+                    --auth
+                        --login
+                            ->page.tsx
+                        --register
+                            ->page.tsx
+
+
+                            localhost:3000/auth/login
+                            localhost:3000/auth/register
+
+                    Here the pages are navigated but the pages doesn't have a proper stractute, like we can't navigate to the both pages easly,
+                        so here we need to add layout. And the layout should run with "children".
+
+                        --auth
+                            --login
+                                ->page.tsx
+                            --register
+                                ->page.tsx
+                         ->layout.tsx
+
+
+                        code: 
+                            
+                            layout.tsx:
+
+                            const AuthLayout = ({
+                                children
+                                }: {
+                                    children: React.ReactNode;
+                                }) => {
+                                    return (
+                                        <div>
+                                            {children}
+                                        </div>
+                                    );
+                                }
+                                export default AuthLayout;
+
+
+                    So here we get a proper layout for the both pages: such as login page and register page:
+
