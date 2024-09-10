@@ -1,0 +1,48 @@
+import React from 'react';
+import { Logo } from './logo';
+import { Search } from './search';
+import Actions from './actions';
+
+function Navbar() {
+  return (
+    <nav className='fixed top-0 w-full h-20 z-[49] bg-[#272932] px-2 lg:px-4 flex justify-between items-center shadow-sm'>
+        <Logo/>
+        <Search/>
+        <Actions />
+    </nav>
+  );
+}
+
+export default Navbar;
+
+
+
+>> Explanation:
+
+        This is the top part of a webpage, usually where you put the logo, a search bar, and user actions like login or register buttons.
+
+                <nav> Element: This is an HTML tag used specifically for navigation sections of a website. Here are the details of its styles:
+
+                        # fixed top-0 makes sure the navbar is always stuck at the top of the screen, even when scrolling.
+                        # w-full h-20 means the width (w-full) takes up the entire screen, and the height (h-20) is set to a specific size (20 units).
+                        # z-[49] is a z-index value, meaning this element will appear above other elements (since it’s near the top).
+                        # bg-[#272932] sets a background color (in this case, a dark gray).
+                        # px-2 lg:px-4 adds padding (space) inside the element.
+                        # flex makes the navbar flexible, with justify-between placing elements like the logo, search bar, and actions at opposite sides.
+                        # shadow-sm adds a small shadow to the navbar to make it look lifted off the page.
+
+                Components Inside the Navbar:
+
+                        # <Logo /> is a placeholder for the website's logo.
+                        # <Search /> is the search bar component.
+                        # <Actions /> holds the user-related buttons, like "Sign In" or "Dashboard".
+
+                Use Case:
+
+                        This navbar is for a webpage where users can search and perform actions like logging in. 
+                        It stays at the top of the screen and has a professional look with the shadow effect.
+
+
+
+
+
