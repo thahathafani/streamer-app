@@ -19,3 +19,24 @@ So here i want to make a connection between the database and the app.
                 .env:
 
                     DATABASE_URL="key here"
+
+    Now install the couple of packages here:
+
+           1. "npm i -D prisma" 
+           2. "npm i @prisma/client"
+           3. "npx i prisma init"
+
+    Now there will be a schema.prisma inside the prisma folder.
+
+        Code:
+
+            prisma/schema.prisma:
+
+                generator client {
+                provider = "prisma-client-js"
+                }
+
+                datasource db {
+                provider = "mongodb"
+                url      = env("DATABASE_URL")
+                }
