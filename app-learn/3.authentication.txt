@@ -106,7 +106,32 @@ The Clerk auth is usefull for authentication, which helps to make authentication
 
                     Now we have setup the "Clerk" but we need to add the signin and signup page:
 
-                        51:08
+                        To add signin and signup page:
+
+                            1. we have to create a route in app folder
+                            2. Create a (auth) folder in app folder
+                            3. Then create a seprate signin and signup folder for both in tha auth folder.
+                            4. Then create a page.tsx for both folders with seprate routing method(eg: [[...sign-in]])
+                            5. In the page.tsx you can create a custom login and register pages, but here we created a same code as from the "Clerk auth".
+
+                                Code: 
+
+                                    sign-in:[[...sign-in]]:page.tsx:
+
+                                                import { SignIn } from '@clerk/nextjs'
+
+                                                    export default function Page() {
+                                                    return <SignIn />
+                                                    }
+
+                                    sign-up:[[...sign-up]]:page.tsx:
+
+                                                import { SignUp } from '@clerk/nextjs'
+
+                                                    export default function Page() {
+                                                    return <SignUp />
+                                                    }
+
 
 
 
