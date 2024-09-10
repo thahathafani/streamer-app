@@ -1,0 +1,8 @@
+So we are setuped the Clerk authentication.
+If the user register in the app the clerk add the details to the system, but we didn't know what goin on the clerk database without connecting our's, So that settup the user db to ourown db.
+
+To do that we need to settup the database seprately with webhook support from the clerk.
+
+    To setup that we need to setup the Database 1st.
+
+        In this project i planned to added the mongodb-atlas database with prisma:
