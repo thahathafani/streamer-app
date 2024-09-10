@@ -6,3 +6,16 @@ To do that we need to settup the database seprately with webhook support from th
     To setup that we need to setup the Database 1st.
 
         In this project i planned to added the mongodb-atlas database with prisma:
+
+
+
+So here i want to make a connection between the database and the app.
+
+    Now create a db on mongodb atlas:
+        copy the atlas url, and paste it on the .env file:
+
+            code:
+
+                .env:
+
+                    DATABASE_URL="key here"
