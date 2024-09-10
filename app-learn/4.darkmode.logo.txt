@@ -1,0 +1,56 @@
+Now we are going to work on the dark mode and auth logo:
+
+For that 1st of all we gone recharge the complete globals.css for keeping css completely standardized.
+
+Now we need to create an component folder inside of the (auth), but before that we have to settup the components folder as in _components. 
+
+    The "_" means as don't even put it in the router.
+    The "_" name after it doesn't matters, even if you put the "_page.tsx" it will not be renderd on the router.
+
+So after that create a "logo.ts" inside the "_components".
+
+
+    Code: logo.ts:
+
+        import Image from "next/image";
+        import { Poppins } from "next/font/google";
+
+        const font = Poppins({
+            subsets: ["latin"],
+            weight: ["200","300","400", "500", "600", "700", "800"],
+        });
+
+        export const Logo = () => {
+            return(
+                <div className="flex flex-col items-center gap-y-4">
+                    <div className="bg-white rounded-full p-1">
+                        <Image 
+                        src=""
+                        alt="streamer-app"
+                        height="80"
+                        />
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <p className="text-2xl font-semibold">
+                            Streamer
+                        </p>
+                        <p className="text-lg text-muted-foreground">
+                            let's Stream Now
+                        </p>
+                    </div>
+                </div>
+            );
+        };
+
+
+        Now the logo is setted very well, but we have to use the components to the layout of the auth,
+         for that we have to add the components logo to the auth layout.
+
+         import the logo 1st: 
+         
+            import { Logo } from "./_components/logo"
+            This before the children: <Logo />
+
+Now we added the Logo to the auth and they are working smoothly:
+
+
