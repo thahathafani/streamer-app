@@ -1,0 +1,33 @@
+Now we are going to connect the localhost to the internet.
+
+Here we are testing to check the connection between the internet.
+
+So we are using Ngrok to connect the app to the internet.
+
+    terminal:
+
+            ngrok
+
+            :success message
+
+            "ngrok config add-authtoken "key here" "
+
+            Now the authtoken is connected with the configration file.
+
+            Now run "ngrok http 3000"
+
+            before running this make sure localhost is running.
+
+        it will create a url for internet search.
+
+        but the issue is, the for everytime we restart the terminal, we get an different url everytime. to make a constant url,
+         we have to work over the fixed url option by the ngrok.
+
+            To make a stable url:
+
+                1. go to ngrok and select "domain" in the "cloud edge".
+                2. copy the link on the start a tunnel.
+                3. Paste it on the terminal.
+                4. Now we have our own url: which will be same forever.
+
+So the Local tunnel is setted very well, with the connection through the internet.
