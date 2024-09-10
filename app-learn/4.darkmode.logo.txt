@@ -54,3 +54,27 @@ So after that create a "logo.ts" inside the "_components".
 Now we added the Logo to the auth and they are working smoothly:
 
 
+Now we are gone work with the "Dark Mode" of the website: This will helps the website to get more attracted over the users:
+
+    To settup the dark mpode we gone use the "Clerks theme provider", which helps to resolve the big coding to shorter one.
+
+    In order to do that we need to install the clerk's "Theme provider".
+    
+    So to install:
+
+        "npm i @clerks/themes" - this install the theme from the clerk.
+
+        So now we have to setup the theme within the auth components
+
+            So move to the app/layout.tsx:
+
+                add this:
+
+                    appearance={{ baseTheme: dark }}
+
+                inside the ThemeProvider tag:
+
+                    <ClerkProvider appearance={{ baseTheme: dark }}>
+
+                So now the clerk components are in dark mode:
+
