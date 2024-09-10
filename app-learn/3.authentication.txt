@@ -250,3 +250,55 @@ The Clerk auth is usefull for authentication, which helps to make authentication
                                     The [[...sign-up]] syntax, like the sign-in route, allows optional parameters. For example, /sign-up and /sign-up/extra-path would both use this page.
                                 
                                 Usage: This route is used to display the user registration form. Clerk handles the details of the form, validation, and submission, making the sign-up process much easier to implement.
+
+                (auth):layout.tsx:
+
+                    import { Logo } from "./_components/logo";
+
+                    const AuthLayout = ({
+                        children
+                    }: {
+                        children: React.ReactNode;
+                    }) => {
+                        return (
+                            <div className="h-full flex flex-col items-center justify-center space-y-6">
+                                <Logo/>
+                                {children}
+                            </div>
+                        )
+                    }
+
+                    export default AuthLayout;
+
+                    Explanation:
+
+                        1. import { Logo } from "./_components/logo";:
+
+                            This imports the Logo component from a local _components/logo file. The Logo likely displays your application or company logo, which will appear on all authentication-related pages.
+                        
+                        2. const AuthLayout = ({ children }: { children: React.ReactNode }) => { ... }:
+
+                            This defines a functional component AuthLayout that accepts children as a prop.
+                            children in React refers to the content nested inside the component. In this case, children will contain either the SignIn or SignUp component, depending on which authentication page is being accessed.
+                            React.ReactNode is a TypeScript type representing any valid React element (HTML, components, etc.).
+                        
+                        3. return ( <div className="h-full flex flex-col items-center justify-center space-y-6"> ... </div> ):
+
+                            The returned JSX structure defines the layout for authentication pages.
+                            className="h-full flex flex-col items-center justify-center space-y-6" applies styling:
+                        
+                                h-full: Makes the layout take up the full height of the page.
+                                flex flex-col: Uses Flexbox to arrange child elements in a vertical column.
+                                items-center justify-center: Centers the child elements both horizontally and vertically.
+                                space-y-6: Adds vertical spacing between the child elements.
+                                The <Logo /> component is rendered at the top of the page, followed by {children}, which will be the sign-in or sign-up form.
+                        
+                        4. export default AuthLayout;:
+
+                            This exports the AuthLayout component as the default export, making it available for use in other parts of the application.
+                        
+                        Usage:
+
+                            Layout Purpose: This layout wraps the authentication pages and provides a consistent look by ensuring the logo and form are centered. Every authentication page (like sign-in or sign-up) will be wrapped by this layout, ensuring uniform styling.
+
+            
