@@ -1,1 +1,22 @@
 Now we are going to work with the webhook with clerk.
+
+    So to setup the webhook, we need to make the connection between the clerk and the internet conection.
+
+    To setup:
+
+        1. Go to webhooks in the clerk:
+        2. Add new webhook
+        3. Now the endpoints paste the ngrok urls:
+        4. At the end of the url add this: "/api/webhooks/clerk" - this is very important
+        5. On the message filtering go and select user and add: user.create,user.deleted,user.updated
+        6. And click create.
+
+Now thw connection build but its not complete until the signing secret key is added to the .env
+
+    Copy the signing key and paste it on the .env:
+
+        .env:
+
+            CLERK_WEBHOOK_SECRET="secret key here!"
+
+            1:43
