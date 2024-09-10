@@ -40,3 +40,44 @@ So here i want to make a connection between the database and the app.
                 provider = "mongodb"
                 url      = env("DATABASE_URL")
                 }
+
+    Now we want to push the db.
+
+        "npx prisma db push" - if here gets any error: we need to added the model on the db:
+
+        So i'am gone make a user model over lib/db.ts:
+
+        Code:
+
+            lib/db.ts:
+
+            model User {
+            id    String @id @default(auto()) @map("_id") @db.ObjectId
+            username  String @unique
+            imageUrl String @db.String
+            email String @unique
+            externalUserId String @unique
+            bio String? @db.String
+
+            createdAt DateTime @default(now())
+            updatedAt DateTime @updatedAt
+            }
+
+    This will works properly.
+
+    Now we want to push the db.
+
+        "npx prisma db push".
+
+    To add the db in local env.
+
+        "npx prisma generate"
+
+    This will push the atlas db to the prisma.
+
+        Now run "npx prisma studio"
+
+    To check out the prisma in the localhost:5555
+
+
+So we setup the database with connected to the prisma.
