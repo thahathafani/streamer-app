@@ -148,6 +148,47 @@ The Clerk auth is usefull for authentication, which helps to make authentication
                                         
                                             Now we setted the complete signin and signup with the clerk auth.
 
+        In here the people who done their sign-in can only be see the home/Dashboard of the website.
+        This will works very well on by doing sign-in and sign-up.
+        But, still we facing an issue over the UI of the auth pages.
+
+            The auth pages are setted on the left corner, we have to redesign it.
+
+                1. Go tho auth folder
+                2. create a layout.tsx file to redesign the entire auth pages.
+                3. Go to the globals.css to add:
+
+                    code: 
+
+                            globals.css: This is the code to make the layout height full.
+
+                                html,
+                                body,
+                                :root {
+                                    height: 100%;
+                                }
+                    
+                4. Now add the code in layout.tsx:
+
+                    Code: 
+
+                        layout.tsx:
+
+                            const AuthLayout = ({
+                                children
+                            }: {
+                                children: React. ReactNode;
+                            }) => { 
+                                return(
+                                    <div className="h-full flex items-center
+                                        justify-center">
+                                            {children}
+                                    </div>
+                                );
+                            };
+                            export default AuthLayout;
+
+        Here the complete code added to make the content in proper layouts:
 
 
 
