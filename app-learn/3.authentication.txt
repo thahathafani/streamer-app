@@ -132,6 +132,22 @@ The Clerk auth is usefull for authentication, which helps to make authentication
                                                     return <SignUp />
                                                     }
 
+                                Now we setted everythingvery well and organized, but we have to added the sign-in sign-up inside of the .env:
+
+                                    To do so, we have to copy the Clerk url's.
+
+                                        Code:
+
+                                            .env:
+
+                                                NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in      Here the sign-in done with the aspects of the file routhing(page.tsx from the sign-in folder)
+                                                NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+                                                NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+                                                NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+                                        
+                                            Now we setted the complete signin and signup with the clerk auth.
+
 
 
 
