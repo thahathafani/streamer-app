@@ -301,4 +301,37 @@ The Clerk auth is usefull for authentication, which helps to make authentication
 
                             Layout Purpose: This layout wraps the authentication pages and provides a consistent look by ensuring the logo and form are centered. Every authentication page (like sign-in or sign-up) will be wrapped by this layout, ensuring uniform styling.
 
-            
+            .env:
+
+                NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
+                CLERK_SECRET_KEY=""
+
+                NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+                NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+                NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+                NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+
+                Explanation:
+
+                    1. NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
+
+                        This is the public key provided by Clerk to identify your application. It’s a publishable key and can be used in the frontend code to integrate Clerk's authentication features.
+                    2. CLERK_SECRET_KEY:
+
+                        This is the secret key that should only be used server-side to authenticate and verify actions with Clerk's API. It is essential to keep this secret and not expose it to the client-side.
+                    
+                    3. NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in and NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up:
+
+                        These environment variables define the URL paths for the sign-in and sign-up pages (/sign-in and /sign-up).
+                        They are used by Clerk to redirect users to the correct authentication routes in the application.
+                    4. NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/ and NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/:
+
+                        These specify where the user should be redirected after successfully signing in or signing up.
+                        In this case, after both actions, the user will be redirected to the homepage (/).
+                    
+                    Usage:
+
+                        Configuration: The .env file contains environment-specific variables that are injected into the app at runtime. These variables configure Clerk's behavior (e.g., sign-in, sign-up URLs, and redirection after authentication).
+
+                        Public vs Secret Keys: The NEXT_PUBLIC_* keys are available to the frontend, while CLERK_SECRET_KEY is only available on the server for security reasons.
