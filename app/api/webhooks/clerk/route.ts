@@ -62,6 +62,26 @@ export async function POST(req: Request) {
           username: payload.data.username,
           imageUrl: payload.data.image_url,
           email: payload.data.email,
+        }
+      });
+    }
+
+    if (eventType === "user.updated") {
+      await db.user.update({
+        where: {
+          externalUserId: payload.data.id,
+        },
+        data: {
+          username: payload.data.username,
+          imageUrl: payload.data.image_url,
+        },
+      });
+    }
+    if (eventType ==="user.deleted")
+    {
+      await db.user.delete({
+        where: {
+          externalUserId: payload.data.id,
         },
       });
     }
