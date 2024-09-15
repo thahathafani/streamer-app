@@ -260,3 +260,6 @@ Now the overall work is done with it, but i have to work with the home page: bec
                                 </div>
                             )
                             }
+
+Now the ui works very well as per our requirements:
+this methods helps to solve the ui errors here.
