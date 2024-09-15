@@ -210,3 +210,53 @@ Now we want to install zustand: for making the drag n drop method
                                 }
 
             The Hint for the arrow button is done.
+
+
+Now the overall work is done with it, but i have to work with the home page: because the home page contents are coverd by the sidebar contents:
+
+    To do so we have to make change in browse layout:
+
+        to do the we have to wrapp the "{children}" in the broswe layout with seprate component: as <container>{children}<container/>
+
+
+            Code:
+
+                    app/(browse)/_component/container.tsx:
+
+                            "use client";
+
+                            import { useEffect } from 'react';
+                            import { useMediaQuery } from 'usehooks-ts';
+                            import { cn } from '@/lib/utils';
+                            import { useSidebar } from '@/store/use-sidebar';
+
+                            interface ContainerProps {
+                                children: React.ReactNode;
+                            };
+
+                            export const Container = ({
+                                children,
+                            }: ContainerProps) => {
+                                const matches = useMediaQuery("(max-width: 1024px)")
+                                const {
+                                    collapsed,
+                                    onCollapse,
+                                    onExpand
+                                } = useSidebar((state) => state)
+
+                                useEffect(() => {
+                                    if(matches) {
+                                        onCollapse();
+                                    } else {
+                                        onExpand();
+                                    }
+                                }, [matches, onCollapse,onExpand]);
+                            return (
+                                <div className={cn(
+                                    "flex-1",
+                                    collapsed? "ml-[70px]" : "ml-[70px] lg:ml-60"
+                                )}>
+                                    {children}
+                                </div>
+                            )
+                            }
