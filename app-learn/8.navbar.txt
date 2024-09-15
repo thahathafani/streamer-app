@@ -34,6 +34,52 @@ So now i am going to make a folder named: (browse) inside the app folder and cre
 
         Okay now the navbar component is done but we need to make much more attractive navbar:
 
+            Like the navbar of the youtube, Netflix, facebook: were the logo, search bar and input area will be there, dashboard or notification, account section etc.
+
+                To make that much attractive Navbar we need to add much more components for each inside the comonents of the navbar and that navbar will be called into the main page layout: the page file we added inside the (broswe) folder.
+
+                    So by working for the other components, we have already created the logo component for the authentication page, so we can copy the "logo.tsx" file from the: "app/(auth)/_components/logo.tsx"
+
+                        The logo component we copied from the (auth) component need to be modified as per the required design of the navbar size:
+
+                            Code:
+
+                                app/(browse)/_component/navbar/logo.tsx:
+
+                                    import Image from "next/image";
+                                    import Link from "next/link";
+                                    import { Poppins } from "next/font/google";
+
+                                    import { cn } from "@/lib/utils";
+
+                                    const font = Poppins({
+                                        subsets: ["latin"],
+                                        weight: ["200","300","400", "500", "600", "700", "800"],
+                                    });
+
+                                    export const Logo = () => {
+                                        return(
+                                            <div className="flex flex-col items-center gap-y-4">
+                                                <div className="bg-white rounded-full p-1">
+                                                    <Image 
+                                                    src=""
+                                                    alt="streamer-app"
+                                                    height="80"
+                                                    />
+                                                </div>
+                                                <div className="flex flex-col items-center">
+                                                    <p className="text-2xl font-semibold">
+                                                        Streamer
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        );
+                                    }:
+
+                            Now the logo component is modified as per the proper size for the navbar: 
+
+                        And we can call the logo component to the navbar component.
+
 
 
 
