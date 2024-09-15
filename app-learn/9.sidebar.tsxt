@@ -44,8 +44,44 @@ Now we just rechange the common design of the sidebar to a collaps or drag metho
             children,
             }: WrapperProps) => {
                 return (
-                    <aside>>
+                    <aside>
                         (children)
                     </aside>
                 )
             }
+
+Now we want to install zustand: for making the drag n drop method
+
+    For that we are:
+
+                    npm i zustand
+                
+        after that we need to make the zustand with proper functionality:
+
+            on the root folder create a folder "store" and make a file "use-sidebarf.ts"
+
+                On that:'
+
+                        Code:
+
+                            import {create } from "zustand";
+
+                            interface SidebarStore {
+                                collapsed: boolean;
+                                onExpand: () => void;
+                                onCollapse: () => void;
+                            };
+
+                            export const useSidebar = create<SidebarStore>((set) => ({
+                                collapsed: false,
+                                onExpand: () => set(() => ({ collapsed: false})),
+                                onCollapse: () => set(() => ({ collapsed: true }))
+                            }))
+
+                    From this we have, assigned the methods:
+
+                                collaps: setted as false which is the collaps is not the pripary activity
+                                and onExpand: setted as also "false"
+                                and the onCollapse: is the setted as true, which is, when the onCollapse is "True" the collaps will happen:
+
+                    Now we done the basic settup for the collaps & expand with zustand
