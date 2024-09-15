@@ -1,0 +1,15 @@
+Now we are going to work with the app ui part: navbar
+
+Here the app navigation is goining to be designed.
+
+So now i am going to make a folder named: (browse) inside the app folder and create an another folder named "(home)".
+
+    Inside the (home) the "page"(from the root of app folder) is drag and droped into the (home).
+
+    So the page file inside the (home) folder is just an home page of the app, nothing changed.
+
+
+    
+
+
+                                    
