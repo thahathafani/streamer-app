@@ -209,6 +209,45 @@ So now i am going to make a folder named: (browse) inside the app folder and cre
 
         So heres, the major component that we required is completely created and add. 
 
+    Okay now, we want to create an layout for the browse:
+
+    So to make the layout in proper looks:
+
+            Code:
+
+                app/(browse)/layout.tsx:
+
+                        import React, { Suspense } from 'react'
+                        import Navbar from './_component/navbar';
+                        import { Logo } from './_component/navbar/logo';
+                        import { Container } from './_component/container';
+                        import { Sidebar, SidebarSkeleton } from './_component/sidebar';
+
+
+
+                        const BrowseLayout = ({
+                            children,
+                        }: {
+                            children: React.ReactNode;
+                        }) => {
+                        return (
+                            <>
+                                <Navbar />
+                                <div className='flex h-full pt-20'>
+                                    <Suspense fallback={<SidebarSkeleton/>}>
+                                        <Sidebar/>
+                                    </Suspense>
+                                    <Container>
+                                        {children}
+                                    </Container>
+                                </div>
+                            </>
+                        )
+                        }
+
+                        export default BrowseLayout
+
+                From this our work is done! and also we called the navbar components to the home page:
 
 
 
