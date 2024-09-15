@@ -16,3 +16,36 @@ Now we going in deep to the sidebar section:
                     </div>
                 );
                 }
+
+        Now we can add the sidebar component to the layout as "<Sidebar />"
+
+Now we just rechange the common design of the sidebar to a collaps or drag method: for the we need to change the div into the wrapper tag:
+            
+            import { Wrapper } from "./wrapper";
+
+            export const Sidebar = async () => {
+                return(
+                    <Wrapper>
+                            <div className="space-y-4 lg:pt-0">
+                                Sidebar
+                            </div>
+                    </Wrapper>
+                );
+            };
+
+    But we are not created any wrapper for this to make the drag n drop method:
+
+        (browse)/_component/sidebar/wrapper.tsx:
+
+            interface WrapperProps {
+            children: React. ReactNode;
+            };
+            export const Wrapper = ({
+            children,
+            }: WrapperProps) => {
+                return (
+                    <aside>>
+                        (children)
+                    </aside>
+                )
+            }
