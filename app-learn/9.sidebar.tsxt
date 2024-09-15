@@ -152,7 +152,61 @@ Now we want to install zustand: for making the drag n drop method
                         export default Toggle
 
 
-        Herewe completely added the toggle for the operation of the toggle with Button:
+        Here we completely added the toggle for the operation of the toggle with Button:
 
 
-        
+        The overall work is done, but we just need to maker the app more simple and user friendly:
+
+            So that, we need to make an hint over the Toggle button(arrow button).
+
+                So we need to install the Tooltip from the npm:
+
+                npm i tooltip:
+
+                    and after that we just need to create an seprate from with the component folder from the root dir:
+
+                        componenets/ui/hint.tsx:
+
+                                import {
+                                    Tooltip,
+                                    TooltipContent,
+                                    TooltipProvider,
+                                    TooltipTrigger
+                                } from "@/components/ui/tooltip";
+
+                                interface HintProps {
+                                    lable: string;
+                                    children: React.ReactNode;
+                                    asChild?: boolean;
+                                    side?: "top" | "bottom" | "left" | "right"
+                                    align?: "start" | "center" | "end";
+
+                                }
+
+                                export const Hint = ({
+                                    lable,
+                                    children,
+                                    asChild,
+                                    side,
+                                    align,
+                                }: HintProps) => {
+                                    return (
+                                        <TooltipProvider>
+                                            <Tooltip delayDuration={0}>
+                                                <TooltipTrigger asChild={asChild}>
+                                                    {children}
+                                                </TooltipTrigger>
+                                                <TooltipContent className="text-black bg-white"
+                                                                align={align}
+                                                                side={side}
+                                                >
+                                                    <p className="font-semibold">
+                                                        {lable}
+                                                    </p>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        </TooltipProvider>
+                                    )
+                                }
+
+            The Hint for the arrow button is done.
