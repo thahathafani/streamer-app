@@ -9,7 +9,32 @@ So now i am going to make a folder named: (browse) inside the app folder and cre
     So the page file inside the (home) folder is just an home page of the app, nothing changed.
 
 
-    
+    So inside of the (browse) folder,we ar going to create a seprate folder named "_components", and create "navbar" folder for creating seprate entry for the component, and create an a intex.tsx inside the "navbar".
+
+        Code:
+
+                app/(browse)/_component/navbar/index.tsx:
+
+                    import React from 'react'
+                    import { Logo } from './logo'
+                    import { Search } from './search'
+                    import Actions from './actions'
+
+                    function Navbar() {
+                    return (
+                        <nav className='fixed top-0 w-full h-20 z-[49] bg-[#272932] px-2 lg:px-4 flex justify-between items-center shadow-sm'>
+                            {/* <Logo/> */}
+                            <Search/>
+                            <Actions />
+                        </nav>
+                    )
+                    }
+
+                    export default Navbar
+
+        Okay now the navbar component is done but we need to make much more attractive navbar:
+
+
 
 
                                     
