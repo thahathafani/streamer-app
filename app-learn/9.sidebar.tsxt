@@ -1,3 +1,18 @@
 Now we going in deep to the sidebar section: 
     Its an a kind of sidebar wich can collaps and drag, 
      the use of this sidebar is to make the list of followers, and recommeded followers.
+
+
+    Now craete a folder sidebar inside the (home)/_component folder
+
+        And craete a file index.tsx as the main page of the sidebar:
+
+            Code:
+
+                export const Sidebar => () {
+                return ( 
+                    <div> 
+                        Sidebar!
+                    </div>
+                );
+                }
